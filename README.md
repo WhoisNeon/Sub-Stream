@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://substream.zeabur.app"><img src="https://img.shields.io/badge/Demo-Online-brightgreen?style=for-the-badge&logo=vercel" alt="Live Demo"></a>
+  <a href="https://whoisneon.github.io/Sub-Stream"><img src="https://img.shields.io/badge/Demo-Online-brightgreen?style=for-the-badge&logo=vercel" alt="Live Demo"></a>
   <a href="https://github.com/WhoisNeon/Sub-Stream/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge" alt="License"></a>
   <a href="#"><img src="https://img.shields.io/badge/Tech-JS%20%7C%20Tailwind-blueviolet?style=for-the-badge&logo=javascript" alt="Tech Stack"></a>
 </p>
@@ -24,7 +24,7 @@
 
 ## 🔴 Live Demo
 
-Experience SubStream live in your browser: [![Live Demo](https://img.shields.io/badge/SubStream-Live%20Demo-2dd4bf?style=for-the-badge)](https://substream.zeabur.app)
+Experience SubStream live in your browser: [![Live Demo](https://img.shields.io/badge/SubStream-Live%20Demo-2dd4bf?style=for-the-badge)](https://whoisneon.github.io/Sub-Stream)
 
 ---
 
