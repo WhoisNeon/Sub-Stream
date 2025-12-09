@@ -1,0 +1,150 @@
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('https://fonts.gstatic.com/s/vazirmatn/v33/XMV0Vf3IAtgT_2AHwG-Lz1xT.woff2') format('woff2');
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+body {
+    font-feature-settings: "cv11", "ss01";
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 999px;
+}
+
+:root.dark ::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+:root.dark ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.emoji-font {
+    font-family: 'Noto Color Emoji', sans-serif;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+:root.dark input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #1f1f22 inset !important;
+    -webkit-text-fill-color: white !important;
+}
+
+#qrcode-container img {
+    margin: 0 auto;
+    border-radius: 4px;
+}
+
+.text-lg,
+.text-xl,
+.text-2xl, 
+button,
+input,
+optgroup,
+select,
+textarea {
+    line-height: 1 !important;
+}
+
+#themeToggle,
+a.p-2 {
+    height: 36px;
+}
+
+a.text-gray-400 {
+    height: 30px;
+}
+
+.container {
+    cursor: pointer;
+    display: block;
+    margin: 0;
+}
+
+.container input {
+    display: none;
+}
+
+.container svg {
+    overflow: visible;
+    transition: transform 0.3s ease;
+}
+
+.path {
+    fill: none;
+    stroke: #14b8a6;
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke-dasharray 0.5s ease, stroke-dashoffset 0.5s ease, stroke 0.3s ease;
+    stroke-dasharray: 239 9999999;
+    stroke-dashoffset: 0;
+}
+
+:root.dark .path {
+    stroke: #ccfbf1;
+}
+
+.container input:checked~svg .path {
+    stroke-dasharray: 70 9999999;
+    stroke-dashoffset: -262;
+}
+
+.container svg path {
+    stroke: #d1d5db;
+    fill: #f3f4f6;
+}
+
+:root.dark .container svg path {
+    stroke: #374151;
+    fill: rgba(255, 255, 255, 0.1);
+}
+
+.container input:checked~svg path {
+    fill: #ccfbf1;
+    stroke: #14b8a6;
+}
+
+:root.dark .container input:checked~svg path {
+    fill: #134e4a;
+    stroke: #14b8a6;
+}
