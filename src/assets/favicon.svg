@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256" aria-label="waves logo">
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2dd4bf"/> <!-- brand-400 -->
+      <stop offset="1" stop-color="#0d9488"/> <!-- brand-600 -->
+    </linearGradient>
+    <filter id="ds" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#2dd4bf" flood-opacity="0.20"/>
+    </filter>
+  </defs>
+
+  <!-- Rounded background -->
+  <rect x="0" y="0" width="256" height="256" rx="48" ry="48" fill="url(#grad)" filter="url(#ds)" />
+
+  <!-- Waves icon -->
+  <g stroke="#fff" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M40,185.61c72-59.69,104,56.47,176-3.22" />
+    <path d="M40,129.61c72-59.69,104,56.47,176-3.22" />
+    <path d="M40,73.61c72-59.69,104,56.47,176-3.22" />
+  </g>
+</svg>

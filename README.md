@@ -81,6 +81,7 @@ The project maintains a flat, modular structure:
 
 ````
 src/
+├── assets/      # favicon, and other media assets
 ├── css/         # Stylesheets
 │   ├── notif.css  # Styling for the animated notification system
 │   └── style.css  # Custom scrollbar, animations (fadeInUp), and utility styles
