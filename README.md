@@ -131,4 +131,4 @@ We welcome contributions\! If you have suggestions for new protocol support or l
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the [MIT](https://github.com/WhoisNeon/Sub-Stream/blob/master/LICENSE) License.
