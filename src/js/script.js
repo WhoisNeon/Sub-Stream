@@ -6,11 +6,12 @@ window.onload = function () {
     const urlInput = document.getElementById('urlInput');
     const extractBtn = document.getElementById('extractBtn');
     const clearUrlInputBtn = document.getElementById('clearUrlInputBtn');
-    const useCorsToggle = document.getElementById('useCorsToggle'); // New Toggle
+    const useCorsToggle = document.getElementById('useCorsToggle');
     const resultSection = document.getElementById('resultSection');
     const configList = document.getElementById('configList');
     const searchConfigInput = document.getElementById('searchConfigInput');
     const emptyState = document.getElementById('emptyState');
+    const mainContent = document.getElementById('mainContent');
 
     // Header/Toolbar Actions
     const themeToggle = document.getElementById('themeToggle');
@@ -293,6 +294,19 @@ window.onload = function () {
         const val = urlInput.value.trim();
         clearUrlInputBtn.classList.toggle('hidden', val === '');
         extractBtn.innerHTML = val === '' ? '<span>Paste & Extract</span><i class="ph-bold ph-clipboard-text"></i>' : '<span>Extract</span><i class="ph-bold ph-arrow-right"></i>';
+
+        // Logic for clearing configs and local storage when input is empty
+        if (val === '') {
+            localStorage.removeItem('subStreamUrl');
+
+            // Clear configurations and hide results
+            rawConfigs = [];
+            configList.innerHTML = '';
+            resultSection.classList.add('hidden');
+            resultSection.classList.remove('flex');
+            localStorage.removeItem('subStreamConfigs');
+            if (mainContent) mainContent.classList.add('justify-center');
+        }
     });
 
     clearUrlInputBtn.addEventListener('click', () => {
@@ -300,6 +314,17 @@ window.onload = function () {
         urlInput.focus();
         clearUrlInputBtn.classList.add('hidden');
         extractBtn.innerHTML = '<span>Paste & Extract</span><i class="ph-bold ph-clipboard-text"></i>';
+
+        // Clear saved URL from localStorage when clear button is used
+        localStorage.removeItem('subStreamUrl');
+
+        // Clear configurations and hide results
+        rawConfigs = [];
+        configList.innerHTML = '';
+        resultSection.classList.add('hidden');
+        resultSection.classList.remove('flex');
+        localStorage.removeItem('subStreamConfigs');
+        if (mainContent) mainContent.classList.add('justify-center');
     });
 
     extractBtn.addEventListener('click', async (e) => {
@@ -328,7 +353,7 @@ window.onload = function () {
         // CORS Proxy Logic
         if (useCorsToggle.checked) {
             // Using the full URL format for corsproxy.io
-            url = 'https://corsproxy.io/?url=' + ur;
+            url = 'https://corsproxy.io/?url=' + url;
         }
 
         showNotif('Fetching subscription...', 'info', 2);
@@ -361,6 +386,8 @@ window.onload = function () {
 
                 resultSection.classList.remove('hidden');
                 resultSection.classList.add('flex');
+                // Remove vertical centering when results appear
+                if (mainContent) mainContent.classList.remove('justify-center');
 
                 setTimeout(() => {
                     const headerHeight = document.querySelector('header').offsetHeight;
@@ -372,10 +399,14 @@ window.onload = function () {
                 searchConfigInput.value = '';
             } else {
                 showNotif('No compatible configs found in URL', 'warning');
+                // Ensure vertical centering is present when no configs are found
+                if (mainContent) mainContent.classList.add('justify-center');
             }
 
         } catch (err) {
             showNotif(`Fetch Error: ${err.message}`, 'error');
+            // Ensure vertical centering is present on fetch error
+            if (mainContent) mainContent.classList.add('justify-center');
         } finally {
             extractBtn.disabled = false;
             extractBtn.classList.remove('opacity-75', 'cursor-not-allowed');
@@ -388,6 +419,7 @@ window.onload = function () {
     const savedConfigs = localStorage.getItem('subStreamConfigs');
     const savedUrl = localStorage.getItem('subStreamUrl');
 
+    // If savedUrl exists, it means the URL was not cleared on the previous session
     if (savedUrl) {
         urlInput.value = savedUrl;
         clearUrlInputBtn.classList.remove('hidden');
@@ -401,7 +433,18 @@ window.onload = function () {
                 resultSection.classList.remove('hidden');
                 resultSection.classList.add('flex');
                 renderConfigs(rawConfigs);
+                // Remove vertical centering when saved results appear
+                if (mainContent) mainContent.classList.remove('justify-center');
+            } else if (mainContent) {
+                // Ensure vertical centering is present if savedConfigs exists but is empty
+                mainContent.classList.add('justify-center');
             }
-        } catch { }
+        } catch {
+            // Ensure vertical centering is present if JSON parsing fails
+            if (mainContent) mainContent.classList.add('justify-center');
+        }
+    } else if (mainContent) {
+        // Ensure vertical centering is present on initial load if no configs are saved
+        mainContent.classList.add('justify-center');
     }
 }
