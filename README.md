@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p align="center">
   <a href="https://substream.zeabur.app"><img src="https://img.shields.io/badge/Demo-Online-brightgreen?style=for-the-badge&logo=vercel" alt="Live Demo"></a>
   <a href="https://github.com/WhoisNeon/Sub-Stream/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge" alt="License"></a>
@@ -131,3 +132,7 @@ We welcome contributions\! If you have suggestions for new protocol support or l
 ## 📄 License
 
 This project is licensed under the MIT License.
+=======
+# Sub-Stream
+client-side web tool to extract, analyze, and manage VPN/proxy configurations from a single subscription URL. Supports VMess, VLESS, SS, Trojan, Hysteria2, TUIC, and more, all processed securely in your browser.
+>>>>>>> 3ccb77ad72da8c4c61209093e5d65d3adbb8b5ed
