@@ -148,3 +148,7 @@ a.text-gray-400 {
     fill: #134e4a;
     stroke: #14b8a6;
 }
+
+#extractBtn:hover i.ph-arrow-right {
+    transform: translateX(0.25rem);
+}

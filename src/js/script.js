@@ -293,7 +293,7 @@ window.onload = function () {
     urlInput.addEventListener('input', () => {
         const val = urlInput.value.trim();
         clearUrlInputBtn.classList.toggle('hidden', val === '');
-        extractBtn.innerHTML = val === '' ? '<span>Paste & Extract</span><i class="ph-bold ph-clipboard-text"></i>' : '<span>Extract</span><i class="ph-bold ph-arrow-right"></i>';
+        extractBtn.innerHTML = val === '' ? '<span>Paste & Extract</span><i class="ph-bold ph-clipboard-text"></i>' : '<span>Extract</span><i class="ph-bold ph-arrow-right transition-transform"></i>';
 
         // Logic for clearing configs and local storage when input is empty
         if (val === '') {
@@ -340,7 +340,7 @@ window.onload = function () {
                     showNotif('Clipboard does not contain a URL', 'error');
                 }
             } catch {
-                showNotif('Paste permission denied. Please paste manually.', 'error');
+                showNotif('Paste permission denied.<br>Please paste manually.', 'error');
             }
         }
     });
