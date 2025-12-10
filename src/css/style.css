@@ -74,14 +74,7 @@ input:-webkit-autofill:active {
     border-radius: 4px;
 }
 
-.text-lg,
-.text-xl,
-.text-2xl, 
-button,
-input,
-optgroup,
-select,
-textarea {
+i.ph, i.ph-bold {
     line-height: 1 !important;
 }
 
@@ -92,6 +85,7 @@ a.p-2 {
 
 a.text-gray-400 {
     height: 30px;
+    line-height: 1;
 }
 
 .container {
