@@ -201,7 +201,7 @@ window.onload = function () {
                        class="p-1.5 rounded-lg text-gray-400 hover:text-yellow-600 dark:hover:text-yellow-400 hover:bg-yellow-100 dark:hover:bg-yellow-500/10 transition-colors" title="Open via Check-Host">
                         <i class="ph-bold ph-globe-hemisphere-west text-lg"></i>
                     </a>
-                    <a href="https://linkirani.ir/?url=${config.address}" target="_blank" 
+                    <a href="https://linkirani.ir/?url=https://${config.address}" target="_blank" 
                        class="p-1.5 rounded-lg text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-500/10 transition-colors" title="Open via Linkirani">
                         <i class="ph-bold ph-link-simple text-lg"></i>
                     </a>
